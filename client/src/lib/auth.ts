@@ -99,10 +99,10 @@ const createUserDocument = async (firebaseUser: FirebaseUser, customDisplayName?
 
 export const updateUserPresence = async (userId: string, isOnline: boolean) => {
   const userRef = doc(db, 'users', userId);
-  await updateDoc(userRef, {
+  await setDoc(userRef, {
     isOnline,
     lastSeen: serverTimestamp(),
-  });
+  }, { merge: true });
 };
 
 export const getCurrentUser = (): FirebaseUser | null => {

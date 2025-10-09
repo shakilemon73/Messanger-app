@@ -1,7 +1,7 @@
 import { cn, getInitials, generateGradient } from '@/lib/utils';
 
 interface AvatarProps {
-  name: string;
+  name?: string | null;
   src?: string;
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -15,8 +15,9 @@ const sizeClasses = {
 };
 
 export const Avatar = ({ name, src, className, size = 'md' }: AvatarProps) => {
-  const initials = getInitials(name);
-  const gradient = generateGradient(name);
+  const displayName = name || 'Unknown';
+  const initials = getInitials(displayName);
+  const gradient = generateGradient(displayName);
 
   if (src) {
     return (

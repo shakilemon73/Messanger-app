@@ -52,6 +52,8 @@ export const formatMessageTime = (date: Date): string => {
 };
 
 export const getInitials = (name: string): string => {
+  if (!name || typeof name !== 'string') return '??';
+  
   return name
     .split(' ')
     .map(word => word[0])
@@ -61,6 +63,10 @@ export const getInitials = (name: string): string => {
 };
 
 export const generateGradient = (seed: string): string => {
+  if (!seed || typeof seed !== 'string') {
+    return 'linear-gradient(135deg, hsl(200, 70%, 60%) 0%, hsl(260, 70%, 50%) 100%)';
+  }
+  
   let hash = 0;
   for (let i = 0; i < seed.length; i++) {
     hash = seed.charCodeAt(i) + ((hash << 5) - hash);
