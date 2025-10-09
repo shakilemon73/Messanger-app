@@ -1,0 +1,196 @@
+Here's a comprehensive prompt for your Replit AI agent:
+
+```
+You are a top-notch Full Stack Developer and UX/UI Designer. Build a modern, production-ready personal messaging application with file transfer capabilities between mobile and PC devices.
+
+## PROJECT OVERVIEW
+Create a cross-platform messaging app using Firebase backend with beautiful, intuitive UI/UX design following modern design principles (glassmorphism, smooth animations, micro-interactions).
+
+## TECH STACK REQUIREMENTS
+- **Backend:** Firebase (Authentication, Firestore, Cloud Storage)
+- **Frontend Web/Desktop:** React.js with Vite
+- **Styling:** Tailwind CSS with custom animations
+- **Real-time:** Firebase Realtime listeners
+- **File Handling:** Firebase Storage with image compression
+- **Icons:** Lucide React or Heroicons
+- **State Management:** React Context API or Zustand
+
+## CORE FEATURES TO IMPLEMENT
+
+### 1. Authentication System
+- Email/password login and signup
+- Google OAuth integration
+- Password reset functionality
+- Session persistence
+- Beautiful onboarding flow with smooth transitions
+
+### 2. Messaging Interface
+- Real-time chat with instant message delivery
+- Message status indicators (sent, delivered, read)
+- Typing indicators
+- Message timestamps (smart formatting: "Just now", "5m ago", "Yesterday")
+- Message search functionality
+- Delete messages (for me/for everyone)
+- Message reactions (emoji reactions)
+
+### 3. File Transfer System
+- Support for images, videos, documents, PDFs
+- Drag-and-drop file upload
+- File preview before sending
+- Image compression (reduce size by 70% before upload)
+- Progress bar for uploads/downloads
+- Thumbnail generation for images
+- File size limit: 10MB per file
+- Support multiple file selection
+
+### 4. User Interface Design (CRITICAL)
+- **Design Style:** Modern, clean, minimal with depth
+- **Color Scheme:** Dark mode primary with light mode toggle
+  - Dark: #0f172a (background), #1e293b (cards), #3b82f6 (primary accent)
+  - Light: #ffffff (background), #f8fafc (cards), #3b82f6 (primary)
+- **Typography:** Inter or SF Pro Display fonts
+- **Layout:** 
+  - Sidebar with conversation list (left)
+  - Main chat area (center)
+  - User profile/settings panel (right, collapsible)
+- **Animations:**
+  - Smooth page transitions (fade-in, slide-up)
+  - Message bubble animations on send
+  - Hover effects on all interactive elements
+  - Skeleton loaders for content loading
+  - Ripple effect on buttons
+- **Components:**
+  - Glassmorphic cards with backdrop blur
+  - Rounded corners (8px-16px)
+  - Subtle shadows for depth
+  - Gradient accents on CTAs
+  - Avatar with online status indicator
+  - Toast notifications for actions
+
+### 5. Responsive Design
+- Mobile-first approach
+- Breakpoints: 640px (mobile), 768px (tablet), 1024px (desktop)
+- Touch-friendly tap targets (minimum 44px)
+- Swipe gestures for mobile (swipe to delete message)
+- Bottom navigation for mobile
+- Adaptive layouts that reflow gracefully
+
+### 6. Performance Optimization
+- Lazy load messages (pagination: 50 messages at a time)
+- Infinite scroll for chat history
+- Image lazy loading
+- Debounced search
+- Optimistic UI updates
+- Local caching of messages
+- Service Worker for offline support (PWA)
+
+### 7. Firebase Configuration
+- Set up Firebase project with environment variables
+- Implement security rules for Firestore and Storage
+- Optimize Firestore queries with indexes
+- Implement data structure:
+```javascript
+// Firestore Collections
+users: {
+  userId: {
+    email, displayName, photoURL, 
+    lastSeen, isOnline, createdAt
+  }
+}
+
+conversations: {
+  conversationId: {
+    participants: [userId1, userId2],
+    lastMessage, lastMessageTime,
+    unreadCount: {userId: count}
+  }
+}
+
+messages: {
+  conversationId: {
+    messages: [
+      {
+        id, senderId, text, fileUrl, 
+        fileType, timestamp, status, 
+        reactions: {userId: emoji}
+      }
+    ]
+  }
+}
+```
+
+### 8. Additional Features
+- Push notifications (using Firebase Cloud Messaging)
+- User presence (online/offline status with last seen)
+- Message encryption indicator (UI only for now)
+- Export chat history (download as JSON/TXT)
+- Settings panel:
+  - Profile editing
+  - Theme toggle (dark/light)
+  - Notification preferences
+  - Privacy settings
+- Empty states with helpful illustrations/icons
+- Error boundaries with friendly error messages
+
+## CODE QUALITY REQUIREMENTS
+- Clean, modular, well-commented code
+- Proper error handling with try-catch blocks
+- Loading states for all async operations
+- Form validation with helpful error messages
+- Accessibility: ARIA labels, keyboard navigation, focus states
+- Console.log removed in production code
+- Environment variables for Firebase config
+- Git-friendly structure with .env.example
+
+## FILE STRUCTURE
+```
+/src
+  /components
+    /auth (Login, Signup, AuthGuard)
+    /chat (MessageList, MessageInput, MessageBubble)
+    /layout (Sidebar, Header, Navigation)
+    /ui (Button, Avatar, Modal, Toast)
+  /contexts (AuthContext, ChatContext)
+  /hooks (useAuth, useChat, useFirestore)
+  /lib (firebase.js, utils.js)
+  /pages (Home, Chat, Settings, Profile)
+  /styles (globals.css, animations.css)
+  App.jsx
+  main.jsx
+```
+
+## DELIVERABLES
+1. Fully functional web application
+2. Responsive design working on all screen sizes
+3. Firebase integration with security rules
+4. README.md with setup instructions
+5. .env.example with required environment variables
+6. Deployed demo (if possible via Replit)
+
+## DESIGN INSPIRATION
+- WhatsApp Web (layout structure)
+- Telegram (smooth animations)
+- Discord (modern UI elements)
+- Linear (clean, minimal aesthetic)
+
+## IMPORTANT NOTES
+- Prioritize UX: Every interaction should feel smooth and intentional
+- Mobile experience is as important as desktop
+- Use Firebase free tier efficiently (implement pagination, compression)
+- Add loading skeletons, not just spinners
+- Empty states should be beautiful and helpful
+- Error messages should be user-friendly, not technical
+- Maintain consistent spacing (use Tailwind spacing scale)
+
+Build this with the mindset of a product launching to real users. Focus on polish, performance, and delightful user experience. Every animation, transition, and interaction should feel purposeful and smooth.
+```
+
+---
+
+This prompt should give your Replit AI agent everything needed to build a professional-grade messaging app. The prompt is:
+- **Specific** about tech stack and features
+- **Detailed** about UI/UX expectations
+- **Clear** about code quality standards
+- **Structured** for easy implementation
+
+Copy this entire prompt into your Replit AI agent and it should be able to build a comprehensive messaging application for you!
