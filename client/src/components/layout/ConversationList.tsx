@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Avatar } from '@/components/ui/avatar';
+import { Avatar } from '@/components/ui/CustomAvatar';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useChat } from '@/hooks/useChat';
 import { useAuth } from '@/hooks/useAuth';

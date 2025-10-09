@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Avatar } from '@/components/ui/Avatar';
+import { Avatar } from '@/components/ui/CustomAvatar';
 import { Separator } from '@/components/ui/separator';
 import { useAuth } from '@/hooks/useAuth';
 import { useChat } from '@/hooks/useChat';

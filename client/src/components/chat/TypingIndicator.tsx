@@ -1,4 +1,4 @@
-import { Avatar } from '@/components/ui/avatar';
+import { Avatar } from '@/components/ui/CustomAvatar';
 import { useUser } from '@/hooks/useFirestore';
 
 interface TypingIndicatorProps {

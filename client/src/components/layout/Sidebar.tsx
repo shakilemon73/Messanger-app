@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Avatar } from '@/components/ui/avatar';
+import { Avatar } from '@/components/ui/CustomAvatar';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { ConversationList } from './ConversationList';
 import { useAuth } from '@/hooks/useAuth';
