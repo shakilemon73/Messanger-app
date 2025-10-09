@@ -18,11 +18,16 @@ externalPort = 80
 localPort = 39221
 externalPort = 3001
 
+[[ports]]
+localPort = 40577
+externalPort = 3000
+
 [env]
 PORT = "5000"
 
 [agent]
 integrations = ["firebase_barebones_javascript:1.0.0"]
+expertMode = true
 
 [workflows]
 runButton = "Project"
